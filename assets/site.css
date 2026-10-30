@@ -840,3 +840,9 @@ button{cursor:pointer;background:none;border:0}
 .faq-a a{color:var(--gold)}
 .pe-faq .faq-a p,.pe-faq .faq-a ul{color:rgba(255,255,255,.75)}
 @media (max-width:560px){ .faq-a h4{padding:4px 20px 10px} .faq-a .notice{margin:0 20px 16px} }
+/* Property & Evidence topic sections (tiles jump here) */
+html{scroll-behavior:smooth}
+.pe-topic,#find{scroll-margin-top:0}
+.pe-topic{padding:80px 0}
+.ks-rich a.pe-top{align-self:flex-start;margin-top:8px;font-weight:700;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none}
+.ks-rich a.pe-top:hover{color:var(--gold)}
