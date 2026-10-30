@@ -788,12 +788,12 @@ button{cursor:pointer;background:none;border:0}
 @media (max-width:900px){ .people{grid-template-columns:repeat(2,1fr)} }
 @media (max-width:560px){ .people{grid-template-columns:1fr;max-width:380px} }
 /* District liaison list */
-.liaison-list li{display:grid!important;grid-template-columns:96px 1fr auto;gap:12px;align-items:center}
+.liaison-list li{display:grid!important;grid-template-columns:96px 1fr;gap:12px;align-items:center}
 .liaison-list li::before{display:none!important}
 .liaison-list .d{font-weight:900;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
 .liaison-list .n{font-weight:600}
-.liaison-list a{font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7)}
-.liaison-list a:hover{color:var(--gold)}
+.liaison-list .n a{display:block;padding-top:2px;font-weight:500;font-size:13px;color:var(--gold);word-break:break-all}
+.liaison-list a:hover{text-decoration:underline}
 .ks-plist .text p + p{padding-top:0}
 /* C1 icon grid: 3 columns when item count is 3/6/9 (keeps rows even) */
 .ks-icons.three .ben-grid{grid-template-columns:repeat(3,1fr)}
