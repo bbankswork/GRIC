@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Emergency Alert Sign-Up | Gila River Police Department</title>
+<meta name="description" content="Sign up for Gila River Indian Community emergency alerts through RAVE and Smart911. Get notifications about severe weather, safety concerns, traffic, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Page built from Kitchen Sink blocks: A3a, B2a, G1, C6, B1 (styles in ../../assets/site.css) -->
+</head>
+<body data-section="crime" data-root="../../">
+
+<div id="site-header"></div>
+
+<!-- A3a INTERIOR PAGE HERO -->
+<section class="page-hero">
+  <div class="bg"><img class="img-i55" alt="GRPD officers with Community members"></div>
+  <div class="inner"><h1>Emergency Alert Sign-Up</h1></div>
+</section>
+
+<!-- B2a TEXT + PHOTO (PHOTO RIGHT) -->
+<section class="ks-split ">
+  <div class="split">
+    <div class="split-copy prose">
+      <p class="eyebrow">RAVE Alert System</p>
+      <div class="rule"></div>
+      <h2 class="h2-split"><span>Emergency Community</span><span class="g">Notification</span></h2>
+      <p>The RAVE Alert System is the Gila River Indian Community (GRIC) Public Safety Division's official emergency alert and notification system. It helps notify the public during emergencies, including severe weather, public safety concerns, traffic alerts, missing persons, and evacuations.</p>
+      <p>RAVE alerts are a free service. You can register online to receive customized alerts by text message, email, and voice message.</p>
+      <p>You may also choose to receive Community notifications about safety, health, utility disruptions, and other relevant topics. The service is provided by GRIC at no cost, although message and data rates may apply.</p>
+      <a href="https://www.smart911.com/smart911/ref/login.action?pa=gilariver" class="btn">Register for Alerts <span class="arr">→</span></a>
+    </div>
+    <div class="split-img"><img class="img-i17" alt="GRPD officers and Community members"></div>
+  </div>
+</section>
+
+<!-- G1 CTA BANNER -->
+<section class="recruit">
+  <div class="recruit-bg"><img class="img-recruit" alt=""></div>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Stay Informed</p>
+      <h2><span>Sign Up for</span><span>Emergency Alerts</span></h2>
+      <p>Register through Smart911 to select the types of notifications you would like to receive and your preferred contact methods.</p>
+    </div>
+    <div class="btns">
+      <a href="https://www.smart911.com/smart911/ref/login.action?pa=gilariver" class="btn">Register for Alerts</a>
+    </div>
+  </div>
+</section>
+
+<!-- C6 FAQ ACCORDION -->
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Emergency Alerts</p>
+      <h2>Frequently Asked Questions</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Who can sign up for alerts?<i>+</i></button>
+        <div class="faq-a"><div><p>Alerts powered by Smart911 are available to anyone who lives, works, travels through, or visits the Gila River Indian Community. You can register an address for your home, work, or another location you care about.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How often will I receive alerts?<i>+</i></button>
+        <div class="faq-a"><div><p>Alert frequency depends on the addresses you provide, your selected notification types, and actual emergency conditions. Emergency alerts are issued when there is an immediate threat to life or property. Community notifications are sent when their alert criteria are met.</p><p>You can adjust your selections at any time through your Smart911 account.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Will my information be shared?<i>+</i></button>
+        <div class="faq-a"><div><p>Information submitted through the alert system is private, exempt from public disclosure, and used only for emergency purposes.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How can I update my contact information or alert preferences?<i>+</i></button>
+        <div class="faq-a"><div><ul><li>Visit the Smart911 sign-in page.</li><li>Sign in with your username and password. Use the account recovery options if needed.</li><li>Open the Preferences tab.</li><li>Update the phone numbers and email addresses where you receive alerts.</li><li>Choose which types of alerts to receive and whether you prefer text, voice, or email notifications.</li></ul><p>For example, you can turn off transportation disruption notifications entirely or choose to receive those notifications by email only.</p><p><a href="https://www.smart911.com/smart911/ref/login.action?pa=gilariver" class="btn" target="_blank" rel="noopener" style="margin-top:4px">Manage Alert Preferences <span class="arr">→</span></a></p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- B1 RICH TEXT -->
+<section class="ks-rich ">
+  <div class="wrap">
+    <div class="body">
+      <div class="ks-head">
+        <h2>For Emergencies, <em>Call 911</em></h2>
+        <div class="rule"></div>
+      </div>
+      <div class="notice red"><i>!</i><span>Emergency alerts help residents and visitors stay informed, but they are not a substitute for requesting emergency assistance. If you are experiencing an emergency, call 911.</span></div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="../../assets/site.js"></script>
+<script>
+/* ---- C6 FAQ accordion ---- */
+document.querySelectorAll('.faq-q').forEach(btn => btn.addEventListener('click', () => {
+  const item = btn.closest('.faq-item'), open = item.classList.contains('open');
+  item.parentElement.querySelectorAll('.faq-item.open').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded', 'false'); });
+  if (!open) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+}));
+</script>
+</body>
+</html>

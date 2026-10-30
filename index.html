@@ -1,5 +1,479 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><title>Gila River Police Department</title>
-<meta http-equiv="refresh" content="0; url=gricpd-homepage-mockup.html">
-<link rel="canonical" href="gricpd-homepage-mockup.html"></head>
-<body><a href="gricpd-homepage-mockup.html">Go to the GRPD homepage</a></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gila River Police Department | Homepage Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ============================================================
+   GRICPD Homepage Mockup — built from Figma node 12023:10088
+   IMAGE NOTE: image sources point to temporary Figma asset URLs
+   (valid ~7 days). Swap each IMG_* value below for final hosted
+   images before handoff / WordPress build.
+   ============================================================ */
+:root{
+  --red:#990000;        /* primary buttons, rules */
+  --red-bright:#c01c2c; /* ticker, accents */
+  --gold:#f7c93b;       /* stats, eyebrows */
+  --tan:#c8a55a;        /* wordmark eyebrow */
+  --ink:#0d0f14;        /* hero / footer */
+  --char:#13151a;       /* base */
+  --slate:#1e2028;      /* about / map */
+  --navy:#000080;
+  --navy-overlay:rgba(27,49,104,.8);
+  --max:1280px;
+  --font:'Raleway', 'Helvetica Neue', Arial, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--char);color:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-weight:700;font-size:10px;letter-spacing:.45em;text-transform:uppercase;color:var(--gold)}
+.rule{width:56px;height:3px;background:var(--red)}
+
+/* ---------- NAV ---------- */
+.nav{position:absolute;inset:0 0 auto 0;z-index:50;background:linear-gradient(to bottom,rgba(0,0,0,.8),rgba(0,0,0,0))}
+.nav::before{content:"";display:block;height:4px;background:var(--red)}
+.nav-top{display:flex;align-items:center;justify-content:space-between;padding:12px 24px 8px;max-width:var(--max);margin:0 auto}
+.brand{display:flex;align-items:center;gap:16px}
+.brand img{width:58px;height:64px;object-fit:cover}
+.brand small{display:block;font-weight:700;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--tan);line-height:1}
+.brand strong{display:block;font-weight:800;font-size:15px;letter-spacing:.1em;text-transform:uppercase;line-height:1.375;margin-top:2px}
+.nav-cta{display:flex;gap:12px;align-items:center}
+.btn-sm{font-weight:700;font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:10px 20px;display:inline-flex;align-items:center;gap:8px;transition:background .2s,color .2s}
+.btn-outline{border:1.2px solid #fff}
+.btn-outline:hover{background:#fff;color:var(--ink)}
+.btn-red{background:var(--red);font-weight:900}
+.btn-red:hover{background:var(--red-bright)}
+.pulse{width:8px;height:8px;border-radius:50%;background:#fff;opacity:.87;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:.87;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+.nav-menu{border-top:1.2px solid rgba(255,255,255,.1)}
+.nav-menu ul{list-style:none;display:flex;justify-content:center;gap:32px;padding:8px 24px;max-width:var(--max);margin:0 auto}
+.nav-menu li{position:relative}
+.nav-menu > ul > li > a{display:flex;gap:4px;align-items:center;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);padding:6px 0;transition:color .2s}
+.nav-menu > ul > li > a span{font-size:9px;opacity:.6;transition:transform .2s}
+.nav-menu li:hover > a,.nav-menu li:focus-within > a{color:#fff}
+.nav-menu li:hover > a span,.nav-menu li:focus-within > a span{transform:rotate(180deg)}
+.dropdown{position:absolute;top:100%;left:50%;transform:translate(-50%,6px);min-width:220px;background:rgba(13,15,20,.97);border-top:3px solid var(--red);padding:10px 0;opacity:0;visibility:hidden;transition:opacity .2s,transform .2s}
+.nav-menu li:hover .dropdown,.nav-menu li:focus-within .dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.dropdown a{display:block;padding:9px 20px;font-size:12px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,.7)}
+.dropdown a:hover{background:rgba(255,255,255,.06);color:var(--gold)}
+.burger{display:none;width:40px;height:40px;border:1.2px solid rgba(255,255,255,.35);align-items:center;justify-content:center;font-size:18px}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:1024px;height:100vh;max-height:1100px;background:var(--ink);overflow:hidden;display:flex;flex-direction:column}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img,.hero-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero-bg video{opacity:0;transition:opacity 1.2s ease}
+.hero-bg.playing video{opacity:.55}
+.hero-bg.playing img{opacity:0;transition:opacity 1.2s ease}
+.hero-bg::after,.hero-bg::before{pointer-events:none}
+.vid-toggle{position:absolute;z-index:3;right:24px;bottom:116px;width:40px;height:40px;border:1.2px solid rgba(255,255,255,.35);background:rgba(13,15,20,.5);display:none;align-items:center;justify-content:center;font-size:12px;transition:border-color .2s}
+.vid-toggle:hover{border-color:#fff}
+.hero-bg.playing ~ .vid-toggle,.vid-toggle.show{display:flex}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--ink) 0%,rgba(13,15,20,.6) 50%,rgba(13,15,20,.2) 100%)}
+.hero-bg::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(13,15,20,.8) 0%,rgba(13,15,20,0) 50%)}
+.hero-content{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:200px 24px 140px;max-width:896px;margin:0 auto}
+.hero-content .eyebrow{font-size:11px;letter-spacing:.45em}
+.hero h1{font-weight:900;font-size:clamp(52px,8vw,104px);line-height:.88;letter-spacing:-.025em;text-transform:uppercase;padding-top:20px}
+.hero h1 span{display:block}
+.hero h1 span:nth-child(2){color:rgba(255,255,255,.85)}
+.tagline{display:flex;align-items:center;gap:16px;padding-top:28px}
+.tagline i{width:56px;height:1px;background:var(--red-bright)}
+.tagline p{font-weight:500;font-style:italic;font-size:16.8px;letter-spacing:.05em;color:rgba(255,255,255,.65)}
+.hero-btns{display:flex;gap:16px;justify-content:center;padding-top:32px;flex-wrap:wrap}
+.btn-lg{font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:16px 36px;display:inline-flex;align-items:center;gap:10px;transition:background .2s,border-color .2s}
+.btn-lg.red{background:var(--red)}
+.btn-lg.red:hover{background:var(--red-bright)}
+.btn-lg.red .arr{transition:transform .2s}
+.btn-lg.red:hover .arr{transform:translateX(4px)}
+.btn-lg.ghost{border:1.2px solid rgba(255,255,255,.35);padding:16px 32px;font-weight:600}
+.btn-lg.ghost:hover{border-color:#fff}
+.play{width:20px;height:20px;border:1.2px solid rgba(255,255,255,.5);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:8px;padding-left:2px}
+.stats{position:relative;z-index:2;background:rgba(13,15,20,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1.2px solid rgba(255,255,255,.1)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);padding-top:20px;padding-bottom:20px}
+.stat{text-align:center;padding:4px 16px;border-right:1.2px solid rgba(255,255,255,.1)}
+.stat:last-child{border:0}
+.stat b{display:block;font-weight:900;font-size:25.6px;line-height:1;color:var(--gold)}
+.stat span{display:block;padding-top:4px;font-weight:600;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+
+/* ---------- TICKER ---------- */
+.ticker{display:flex;height:42px;background:var(--red-bright);overflow:hidden}
+.ticker-label{flex:none;background:#000;display:flex;align-items:center;gap:8px;padding:0 20px;font-weight:900;font-size:10px;letter-spacing:.3em;text-transform:uppercase;position:relative;z-index:1}
+.ticker-label i{width:6px;height:6px;border-radius:50%;background:var(--red-bright);animation:pulse 1.2s infinite}
+.ticker-track{flex:1;overflow:hidden;display:flex;align-items:center}
+.ticker-move{display:flex;white-space:pre;animation:ticker 60s linear infinite}
+.ticker:hover .ticker-move{animation-play-state:paused}
+.ticker-move p{padding:0 32px;font-weight:600;font-size:12px;letter-spacing:.025em}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- FEATURE TILES ---------- */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr)}
+.tile{position:relative;height:500px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:32px}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.tile::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.15) 100%);transition:background .4s}
+.tile::after{content:"";position:absolute;top:0;left:0;height:3px;width:100%;background:var(--gold);z-index:2;transform-origin:left;transition:transform .4s}
+.tile:hover img{transform:scale(1.06)}
+.tile:hover::before{background:linear-gradient(to top,rgba(153,0,0,.88) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.15) 100%)}
+.tile-num{position:absolute;top:20px;right:32px;z-index:2;font-weight:900;font-size:60px;line-height:1;color:rgba(200,165,90,.22)}
+.tile-body{position:relative;z-index:2}
+.tile-body small{display:block;font-weight:700;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.55);padding-bottom:8px}
+.tile-body h3{font-weight:900;font-size:29.6px;line-height:1.25;letter-spacing:.025em;text-transform:uppercase}
+.tile-body .explore{display:inline-flex;gap:8px;padding-top:20px;font-weight:700;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}
+.tile:hover .explore span{transform:translateX(4px)}
+.explore span{transition:transform .2s}
+
+/* ---------- ABOUT ---------- */
+.about{background:var(--slate)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;max-width:var(--max);margin:0 auto}
+.about-img{position:relative;min-height:894px;background:var(--char);overflow:hidden}
+.about-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0) 50%,rgba(30,32,40,.6) 100%)}
+.badge{position:absolute;left:32px;bottom:64px;z-index:1;background:var(--red);padding:24px;max-width:220px}
+.badge b{display:block;font-weight:900;font-size:36px;line-height:1}
+.badge span{display:block;padding-top:4px;font-weight:700;font-size:10px;line-height:1.375;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.about-copy{padding:80px 64px;display:flex;flex-direction:column;justify-content:center}
+.about-copy .eyebrow{padding-bottom:12px}
+.about-copy .rule{margin-bottom:32px}
+.about-copy h2{font-weight:900;font-size:44.8px;line-height:.92;letter-spacing:-.025em;text-transform:uppercase;padding-bottom:28px}
+.about-copy h2 em{font-style:normal;color:var(--gold)}
+.about-copy p{font-size:15.2px;line-height:1.625;color:rgba(255,255,255,.55);padding-bottom:20px;max-width:512px}
+.about-copy p strong{font-weight:600;color:rgba(255,255,255,.75)}
+.mission{border-left:2.5px solid var(--red);padding-left:20px;margin:28px 0 40px}
+.mission .eyebrow{letter-spacing:.3em;padding:0}
+.mission blockquote{padding-top:8px;font-style:italic;font-size:14px;line-height:1.625;color:rgba(255,255,255,.65)}
+.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;border-top:1.25px solid rgba(255,255,255,.1);padding-top:32px}
+.mini-stats b{display:block;font-weight:900;font-size:28px;line-height:1.5;color:var(--gold)}
+.mini-stats span{display:block;padding-top:4px;font-weight:600;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+
+/* ---------- RECRUIT ---------- */
+.recruit{position:relative;background:var(--navy);overflow:hidden}
+.recruit-bg{position:absolute;inset:0;opacity:.25}
+.recruit-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.recruit::after{content:"";position:absolute;inset:0;background:var(--navy-overlay)}
+.recruit .wrap{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:40px;padding-top:64px;padding-bottom:64px;min-height:343px}
+.recruit h2{font-weight:900;font-size:41.6px;line-height:1.25;letter-spacing:-.025em;text-transform:uppercase;padding-top:12px}
+.recruit h2 span{display:block}
+.recruit h2 span + span{color:var(--gold)}
+.recruit p{max-width:512px;padding-top:16px;font-size:14px;line-height:1.625;color:rgba(255,255,255,.55)}
+.recruit-btns{display:flex;gap:16px;flex:none}
+.recruit-btns a{font-size:14px;letter-spacing:.18em;text-transform:uppercase;padding:16px 40px}
+.recruit-btns .apply{background:var(--red);font-weight:900}
+.recruit-btns .apply:hover{background:var(--red-bright)}
+.recruit-btns .more{border:1.25px solid rgba(255,255,255,.35);font-weight:700}
+.recruit-btns .more:hover{border-color:#fff}
+
+/* ---------- MAP ---------- */
+.map{background:var(--slate);padding:80px 0 40px}
+.map-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;padding-top:8px}
+.map-head h2{font-weight:900;font-size:30px;line-height:1.2;letter-spacing:-.025em;text-transform:uppercase;padding-bottom:8px}
+.map-head .rule{background:var(--red-bright)}
+.map-head p{max-width:320px;font-size:14px;line-height:1.625;color:rgba(255,255,255,.4)}
+.map-frame{margin-top:32px;height:500px;background:#eee;overflow:hidden}
+.map-frame iframe{width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.05)}
+
+/* ---------- INSTAGRAM ---------- */
+.insta{background:#000;padding-top:30px}
+.insta-head{max-width:1304px;margin:0 auto;padding:0 24px 24px}
+.insta-head h2{font-weight:900;font-size:30px;line-height:1.06;letter-spacing:.025em;text-transform:uppercase}
+.insta-head a{display:inline-block;font-weight:700;font-size:18px;line-height:28px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold)}
+.insta-head a:hover{text-decoration:underline}
+.feed{display:grid;grid-template-columns:repeat(6,1fr);height:277px}
+.feed a{position:relative;overflow:hidden}
+.feed img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.feed a::after{content:"View on Instagram";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(153,0,0,.75);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transition:opacity .3s}
+.feed a:hover img{transform:scale(1.08)}
+.feed a:hover::after,.feed a:focus-visible::after{opacity:1}
+
+/* ---------- FOOTER ---------- */
+.footer{background:var(--ink);border-top:3.6px solid var(--red)}
+.footer .wrap{padding-top:64px;padding-bottom:64px}
+.foot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.foot-brand .brand img{width:51px;height:56px}
+.foot-brand .brand small{color:var(--gold)}
+.foot-brand .brand strong{font-size:14px}
+.foot-brand p{padding-top:20px;font-size:12px;line-height:1.625;color:rgba(255,255,255,.35)}
+.socials{display:flex;gap:10px;padding-top:24px}
+.socials a{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);transition:background .2s}
+.socials a:hover{background:var(--red)}
+.socials img{width:24px;height:24px}
+.foot-col h4{font-weight:900;font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding-bottom:12px;border-bottom:1.2px solid rgba(255,255,255,.1)}
+.foot-col ul{list-style:none;padding-top:20px}
+.foot-col li + li{padding-top:10px}
+.foot-col li a{font-weight:600;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.38);transition:color .2s}
+.foot-col li a:hover{color:var(--gold)}
+.contact{padding-top:20px;font-size:12px;line-height:1.625}
+.contact p + p{padding-top:12px}
+.contact b{display:block;font-weight:600;color:var(--gold)}
+.contact b.inline{display:inline}
+.contact span{color:rgba(255,255,255,.38)}
+.foot-bottom{margin-top:48px;padding-top:24px;border-top:1.2px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11px;color:rgba(255,255,255,.25)}
+.foot-bottom nav{display:flex;gap:20px}
+.foot-bottom a:hover{color:#fff}
+
+/* ---------- VIDEO MODAL ---------- */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:24px}
+.modal.open{display:flex}
+.modal-box{width:min(960px,100%);aspect-ratio:16/9;background:var(--char);border-top:4px solid var(--red);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;position:relative;padding:24px}
+.modal-box p{color:rgba(255,255,255,.55);font-size:14px;max-width:420px;line-height:1.6}
+.modal-close{position:absolute;top:12px;right:16px;font-size:28px;line-height:1;color:rgba(255,255,255,.7)}
+.modal-close:hover{color:#fff}
+
+/* ---------- MOBILE DRAWER ---------- */
+.drawer{position:fixed;inset:0;z-index:90;background:var(--ink);padding:24px;transform:translateX(100%);transition:transform .3s;overflow-y:auto}
+.drawer.open{transform:none}
+.drawer ul{list-style:none;margin-top:48px}
+.drawer li a{display:block;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1);font-weight:800;font-size:16px;letter-spacing:.12em;text-transform:uppercase}
+.drawer .btn-sm{margin-top:24px;width:100%;justify-content:center;padding:14px}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1100px){
+  .nav-menu ul{gap:20px}
+  .about-copy{padding:64px 40px}
+  .recruit .wrap{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:900px){
+  .nav-menu,.nav-cta .btn-outline{display:none}
+  .burger{display:flex}
+  .hero{min-height:760px;height:auto}
+  .stats .wrap{grid-template-columns:repeat(2,1fr);row-gap:16px}
+  .stat:nth-child(2){border-right:0}
+  .tiles{grid-template-columns:1fr}
+  .tile{height:380px}
+  .about-grid{grid-template-columns:1fr}
+  .about-img{min-height:520px}
+  .map-head{flex-direction:column;align-items:flex-start}
+  .feed{grid-template-columns:repeat(3,1fr);height:auto}
+  .feed a{aspect-ratio:1}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .brand strong{font-size:13px}
+  .brand img{width:46px;height:51px}
+  .nav-cta .btn-red{padding:10px 12px}
+  .hero-content{padding:160px 20px 100px}
+  .tagline i{width:28px}
+  .about-copy{padding:56px 24px}
+  .about-copy h2{font-size:34px}
+  .recruit h2{font-size:30px}
+  .recruit-btns{flex-direction:column;width:100%}
+  .recruit-btns a{text-align:center}
+  .map-frame{height:360px}
+  .foot-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body data-section="" data-root="">
+
+<div id="site-header"></div>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg">
+    <!-- Fallback/poster image: shows until the video loads, or if it can't play -->
+    <img class="img-hero" alt="Gila River Police Department officers in front of headquarters">
+    <!-- HERO VIDEO: GRPD_General_16x9_4K.mp4, muted autoplay loop (see script at bottom) -->
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  </div>
+  <button class="vid-toggle" id="vidToggle" aria-label="Pause background video">❚❚</button>
+  <div class="hero-content">
+    <p class="eyebrow">Akimel O'odham · Pee-Posh · Gila River Indian Community</p>
+    <h1><span>Gila River</span><span>Police</span><span>Department</span></h1>
+    <div class="tagline"><i></i><p>Stand Strong. Serve Proud.</p><i></i></div>
+    <div class="hero-btns">
+      <a href="join-the-team/" class="btn-lg red">Join Our Team <span class="arr">→</span></a>
+      <button class="btn-lg ghost" data-open-video><span class="play">▶</span>Watch Our Story</button>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat"><b data-count="1939">1939</b><span>Community Established</span></div>
+      <div class="stat"><b data-count="583">583</b><span>Square Miles</span></div>
+      <div class="stat"><b data-count="7">7</b><span>Districts Served</span></div>
+      <div class="stat"><b>24/7</b><span>Emergency Response</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ALERT TICKER ================= -->
+<div class="ticker" role="region" aria-label="Community alerts">
+  <div class="ticker-label"><i></i>Alerts</div>
+  <div class="ticker-track">
+    <div class="ticker-move">
+      <p>[Placeholder: Current approved alert or community safety announcement]    ·    [Placeholder: Current approved alert or community safety announcement]    ·    [Placeholder: Current approved alert or community safety announcement]</p>
+      <p aria-hidden="true">[Placeholder: Current approved alert or community safety announcement]    ·    [Placeholder: Current approved alert or community safety announcement]    ·    [Placeholder: Current approved alert or community safety announcement]</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= FEATURE TILES ================= -->
+<section class="tiles" id="join">
+  <a href="join-the-team/" class="tile">
+    <img class="img-tile1" alt="">
+    <span class="tile-num">01</span>
+    <div class="tile-body"><small>Careers &amp; Recruitment</small><h3>Join The Team</h3><span class="explore">Explore <span>→</span></span></div>
+  </a>
+  <a href="crime-prevention/emergency-alert-sign-up/" class="tile">
+    <img class="img-tile2" alt="">
+    <span class="tile-num">02</span>
+    <div class="tile-body"><small>Stay Informed</small><h3>Emergency Alerts</h3><span class="explore">Explore <span>→</span></span></div>
+  </a>
+  <a href="about/community/" class="tile">
+    <img class="img-tile3" alt="">
+    <span class="tile-num">03</span>
+    <div class="tile-body"><small>Gila River Community</small><h3>Our Community</h3><span class="explore">Explore <span>→</span></span></div>
+  </a>
+</section>
+
+<!-- ================= WHO WE ARE ================= -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-img">
+      <img class="img-about" alt="GRICPD officers">
+      <div class="badge"><b>7</b><span>Districts Served Across the Gila River Indian Community</span></div>
+    </div>
+    <div class="about-copy">
+      <p class="eyebrow">Who We Are</p>
+      <div class="rule"></div>
+      <h2>Rooted in the <em>Gila River Community</em></h2>
+      <p>The Gila River Indian Reservation was established in 1859, and the Gila River Indian Community was formally established by Congress in 1939. Home to the <strong>Akimel O'odham (Pima)</strong> and <strong>Pee-Posh (Maricopa)</strong> peoples, the Community spans 583.749 square miles across Pinal and Maricopa Counties, adjacent to the Phoenix Metropolitan Area.</p>
+      <!-- DOC NOTE: [Confirm unit names and descriptions with the department.] -->
+      <p>The Gila River Indian Community Police Department provides law enforcement services through criminal investigations, preventative patrol, and directed patrol. Our department's specialized teams and services include K-9, Rangers, Special Investigations, SWAT, School Resource Officers, Motor Unit, Dispatch, and Graffiti Abatement. Together, these teams support our commitment to protecting personal property, preserving life, and improving the quality of life throughout the Community.</p>
+      <div class="mission">
+        <p class="eyebrow">Our Mission</p>
+        <blockquote>“It is the Mission of the Gila River Police Department to protect the life, property and sovereignty of all members of the Community by responding to calls for service with Integrity, proactively looking to prevent crime and to improve the quality of life of those we serve.”</blockquote>
+      </div>
+      <!-- OUR DEPARTMENT BY THE NUMBERS (doc) -->
+      <div class="mini-stats">
+        <div><b class="ph">[####]</b><span>2025 Calls for Service</span></div>
+        <div><b class="ph">[###]</b><span>Dept. Employees</span></div>
+        <div><b>3</b><span>Substations, Training Center, Shooting Range</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MESSAGE FROM THE CHIEF ================= -->
+<!-- DOC: [Client to provide message from the chief] -->
+<section class="chief flip" id="chief">
+  <div class="grid">
+    <div class="chief-copy">
+      <p class="eyebrow">Gila River Police Department</p>
+      <div class="rule"></div>
+      <h2 class="h2-split"><span>Message From</span><span class="g">the Chief</span></h2>
+      <div class="chief-msg ph-box">
+        <p class="ph">[Client to provide message from the chief]</p>
+      </div>
+      <div class="signature"><b>William Lewis</b><span>Acting Chief of Police</span></div>
+    </div>
+    <div class="chief-photo"><img class="img-chief" alt="William Lewis, Acting Chief of Police"></div>
+  </div>
+</section>
+
+<!-- ================= LATEST NEWS ================= -->
+<!-- DEVELOPMENT NOTE (doc): Provide an option when adding news to feature an item in this homepage section. -->
+<section class="news">
+  <div class="wrap">
+    <div class="news-head">
+      <div><p class="eyebrow">Stay Informed</p><h2>Latest News</h2><div class="rule"></div></div>
+      <a href="news/" class="btn btn-ghost">View All News <span class="arr">→</span></a>
+    </div>
+    <div class="news-grid">
+      <a class="post" href="news/grpd-is-hiring/"><div class="post-img"><img class="img-i24" alt="GRPD officers in formation"></div>
+        <div class="post-body"><time datetime="2026-10-30">October 30, 2026</time><h3>GRPD Is Hiring: $7,500 Bonus for New Recruits and Lateral Officers</h3><span class="go">Read More →</span></div></a>
+      <a class="post" href="news/grpd-is-hiring/"><div class="post-img"><img class="img-news2" alt=""></div>
+        <div class="post-body"><time class="ph">[Date]</time><h3 class="ph">[News Headline]</h3><span class="go">Read More →</span></div></a>
+      <a class="post" href="news/grpd-is-hiring/"><div class="post-img"><img class="img-news3" alt=""></div>
+        <div class="post-body"><time class="ph">[Date]</time><h3 class="ph">[News Headline]</h3><span class="go">Read More →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RECRUIT BANNER ================= -->
+<section class="recruit">
+  <div class="recruit-bg"><img class="img-recruit" alt=""></div>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Now Hiring</p>
+      <h2><span>Serve with Purpose.</span><span>Join GRPD Today.</span></h2>
+      <p>Competitive salary, comprehensive benefits, and the privilege of protecting the Gila River Indian Community. Sworn officers, civilian staff, and volunteers welcome.</p>
+    </div>
+    <div class="btns">
+      <a href="join-the-team/#roles" class="btn">Apply Now</a>
+      <a href="join-the-team/" class="btn btn-ghost">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MAP ================= -->
+<section class="map">
+  <div class="wrap">
+    <p class="eyebrow">Our Location</p>
+    <div class="map-head">
+      <div><h2>Just 30 Miles from Phoenix</h2><div class="rule"></div></div>
+      <p>Sacaton, AZ, heart of the Gila River Indian Community, south of the Phoenix Metro area.</p>
+    </div>
+    <div class="map-frame">
+      <iframe title="Map of Sacaton, Arizona" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Sacaton,+AZ+85147&t=&z=10&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!-- Video modal -->
+<div class="modal" id="video" role="dialog" aria-modal="true" aria-label="Our story video">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Close video" data-close-video>×</button>
+    <span class="play" style="width:56px;height:56px;font-size:18px">▶</span>
+    <p class="eyebrow">Video placeholder</p>
+    <p>Department story video embeds here (YouTube/Vimeo or self-hosted MP4).</p>
+  </div>
+</div>
+
+<script src="assets/site.js"></script>
+<script>
+/* Images, nav, mobile menu and footer come from assets/site.js */
+
+/* ---- Hero background video montage ---- */
+/* Header video: GRPD_General_16x9_4K.mp4 — autoplays muted and loops.
+   1st choice: a web-compressed copy at videos/grpd-hero.mp4 (fast; use this for launch).
+   Fallback: streams grpd-hero.mp4 from the shared Drive folder. */
+GRIC_heroVideo('heroBg', [
+  'videos/grpd-hero.mp4',
+  'https://drive.usercontent.google.com/download?id=1v_PBfLc8osZY_NoQwLYu5QES8cGEmDPa&export=download&confirm=t'
+], 'hero', { fallback: true });
+
+/* ---- Video modal ---- */
+const modal = document.getElementById('video');
+document.querySelector('[data-open-video]').onclick = () => modal.classList.add('open');
+document.querySelector('[data-close-video]').onclick = () => modal.classList.remove('open');
+modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.remove('open'); });
+
+/* ---- Hero stat count-up (single page-load moment) ---- */
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const end = +el.dataset.count, start = end > 1000 ? end - 80 : 0, t0 = performance.now(), dur = 1400;
+    const tick = t => { const p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(start + (end - start) * e); if (p < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  });
+}
+</script>
+</body>
+</html>
