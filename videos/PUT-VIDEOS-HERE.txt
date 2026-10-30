@@ -1,0 +1,9 @@
+Drop web-compressed videos in this folder with these exact names:
+
+  grpd-hero.mp4        -> Homepage header (from GRPD_General_16x9_4K.mp4)
+  grpd-recruiting.mp4  -> Join the Team header (from "Join the Gila River Police General_16x9_4K.mp4")
+
+Aim for 1080p, no audio, 15-30 seconds, under ~15 MB. ffmpeg example:
+  ffmpeg -i GRPD_General_16x9_4K.mp4 -t 25 -vf "scale=1920:-2" -an -c:v libx264 -crf 28 -preset slow -movflags +faststart grpd-hero.mp4
+
+Until a file is here, the page shows the header photo instead.

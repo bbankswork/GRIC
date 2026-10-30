@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Police Community Event Request | Gila River Police Department</title>
+<meta name="description" content="Request Gila River Police Department participation at a Community event. Learn about availability, confirmation requirements, and how to contact GRPD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="gricpd-site.css">
+<!-- Page built from Kitchen Sink blocks: A3a, B1, E1 (styles in gricpd-site.css) -->
+</head>
+<body data-section="forms">
+
+<div id="site-header"></div>
+
+<!-- A3a INTERIOR PAGE HERO -->
+<section class="page-hero">
+  <div class="bg"><img class="img-i62" alt="GRPD officers with Community children"></div>
+  <div class="inner"><h1>Police Community Event Request</h1></div>
+</section>
+
+<!-- B1 RICH TEXT -->
+<section class="ks-rich ">
+  <div class="wrap">
+    <div class="body">
+      <div class="ks-head">
+        <h2>Request GRPD Attendance at <em>Your Community Event</em></h2>
+        <div class="rule"></div>
+      </div>
+      <p>The Gila River Police Department is proud to support and engage with our Community beyond law enforcement duties. If you or your organization would like to request GRPD’s participation at an event in a community relations capacity (not for security or law enforcement presence), please complete the request form below.</p>
+      <p>While we strive to honor as many requests as possible, attendance is not guaranteed and depends on officer availability, staffing levels, and calls for service. Weekend events may be especially limited due to scheduling constraints.</p>
+      <div class="notice"><i>!</i><span>Please wait for formal confirmation before advertising GRPD’s attendance at your event.</span></div>
+      <p>Thank you for partnering with us to strengthen Community connections.</p>
+    </div>
+  </div>
+</section>
+
+<!-- E1 FORM — CENTERED: EVENT REQUEST -->
+<!-- DEVELOPMENT: prototype form only — nothing is sent. Live build needs notification recipients (PIO) and a confirmation email. -->
+<section class="ks-form" id="request">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Event Request Form</p>
+      <h2>Request GRPD at Your Event</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="form-card">
+      <form id="eventForm" novalidate>
+        <fieldset>
+          <legend>Contact Information</legend>
+          <div class="row2"><div><label for="e-name">Contact Name *</label><input id="e-name" name="e-name" type="text" required></div><div><label for="e-org">Organization</label><input id="e-org" name="e-org" type="text"></div></div>
+          <div class="row2"><div><label for="e-email">Email Address *</label><input id="e-email" name="e-email" type="email" required></div><div><label for="e-phone">Phone Number *</label><input id="e-phone" name="e-phone" type="tel" required></div></div>
+        </fieldset>
+        <fieldset>
+          <legend>Event Details</legend>
+          <div class="field-full"><div><label for="e-event">Event Name *</label><input id="e-event" name="e-event" type="text" required></div></div>
+          <div class="row3"><div><label for="e-date">Event Date *</label><input id="e-date" name="e-date" type="date" required></div><div><label for="e-start">Start Time *</label><input id="e-start" name="e-start" type="time" required></div><div><label for="e-end">End Time</label><input id="e-end" name="e-end" type="time"></div></div>
+          <div class="field-full" style="margin-top:16px"><div><label for="e-addr">Event Address *</label><input id="e-addr" name="e-addr" type="text" required placeholder="Street address, city, ZIP"></div></div>
+          <div class="field-full"><div><label for="e-att">Expected Attendance</label><input id="e-att" name="e-att" type="number" placeholder="Approximate number of guests"></div></div>
+        </fieldset>
+        <button type="submit" class="btn submit">Submit Request</button>
+        <div class="form-msg" id="eventFormMsg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- B1 RICH TEXT -->
+<section class="ks-rich slate">
+  <div class="wrap">
+    <div class="body">
+      <div class="ks-head">
+        <h2>Questions About <em>Your Request?</em></h2>
+        <div class="rule"></div>
+      </div>
+      <p>For additional information, please contact:</p>
+      <div class="cols">
+        <div class="lcard"><h3>Teaya Enos</h3><p>Public Information Officer</p><p><strong>Email:</strong> <a href="mailto:Teaya.Enos.GRPD@gric.nsn.us">Teaya.Enos.GRPD@gric.nsn.us</a><br><strong>Phone:</strong> <a href="tel:5205627500">(520) 562-7500</a></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="gricpd-site.js"></script>
+<script>
+/* ---- Prototype form: validates only, nothing is sent ---- */
+(() => { const f = document.getElementById('eventForm'), m = document.getElementById('eventFormMsg');
+f.addEventListener('submit', e => { e.preventDefault(); m.className = 'form-msg show';
+  if (!f.checkValidity()) { m.classList.add('err'); m.textContent = 'Please complete all required fields.'; return; }
+  m.textContent = 'Thank you. Your request has been received. Please wait for formal confirmation from GRPD before advertising our attendance.'; f.reset(); }); })();
+</script>
+</body>
+</html>
