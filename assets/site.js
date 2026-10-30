@@ -140,6 +140,7 @@
     ig1: D(IG[0], 700), ig2: D(IG[1], 700), ig3: D(IG[2], 700), ig4: D(IG[3], 700), ig5: D(IG[4], 700), ig6: D(IG[5], 700),
     /* icons */
     fb: svg('<path d="M14 8.5V7c0-.7.4-1 1-1h2V2.5h-3C11.5 2.5 10 4.2 10 6.8v1.7H7.5V12H10v9.5h4V12h2.8l.5-3.5H14z"/>', true),
+    li: svg('<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4z"/>', true),
     insta: svg('<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="#fff"/>'),
     yt: svg('<path fill-rule="evenodd" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3L10 15z"/>', true),
     icphone: svg('<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>'),
@@ -195,14 +196,15 @@
         <div class="brand"><img class="img-seal" alt="GRIC Public Safety seal"><div><small>Gila River Indian Community</small><strong>Police Department</strong></div></div>
         <p>Protecting the life, property, and sovereignty of all members of the Gila River Indian Community since 1939.</p>
         <div class="socials">
-          <a href="#" aria-label="Facebook"><img class="img-fb" alt=""></a>
+          <a href="https://www.facebook.com/GilaRiverPolice" target="_blank" rel="noopener" aria-label="Facebook"><img class="img-fb" alt=""></a>
           <a href="https://www.instagram.com/gilariverpd/" target="_blank" rel="noopener" aria-label="Instagram"><img class="img-insta" alt=""></a>
-          <a href="#" aria-label="YouTube"><img class="img-yt" alt=""></a>
+          <a href="https://www.youtube.com/@gilariverpd" target="_blank" rel="noopener" aria-label="YouTube"><img class="img-yt" alt=""></a>
+          <a href="https://www.linkedin.com/company/gila-river-police-department" target="_blank" rel="noopener" aria-label="LinkedIn"><img class="img-li" alt=""></a>
         </div>
       </div>
       <div class="foot-col"><h4>Quick Links</h4>
-        <ul><li><a href="${PAGES.about}">About Us</a></li><li><a href="${PAGES.join}">Join the Team</a></li><li><a href="${PAGES.patrol}">Services</a></li>
-            <li><a href="${PAGES.blockWatch}">Crime Prevention</a></li><li><a href="${PAGES.evidence}">Online Forms</a></li><li><a href="${PAGES.news}">News</a></li><li><a href="${PAGES.contact}">Contact</a></li></ul></div>
+        <ul><li><a href="${PAGES.about}">About Us</a></li><li><a href="${PAGES.leadership}">Leadership</a></li><li><a href="${PAGES.join}">Join the Team</a></li>
+            <li><a href="${PAGES.community}">Community Programs</a></li><li><a href="${PAGES.news}">News</a></li><li><a href="${PAGES.missing}">Missing Persons</a></li><li><a href="${PAGES.contact}">Contact Us</a></li></ul></div>
       <div class="foot-col"><h4>Online Services</h4>
         <ul><li><a href="${PAGES.evidence}">Property &amp; Evidence</a></li><li><a href="${PAGES.records}">Records Requests</a></li><li><a href="${PAGES.commend}">Commendations &amp; Complaints</a></li>
             <li><a href="${PAGES.commReq}">Police Community Request</a></li><li><a href="${PAGES.alerts}">Emergency Alert Sign-Up</a></li></ul></div>

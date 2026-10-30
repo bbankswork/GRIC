@@ -41,7 +41,7 @@
 </section>
 
 <!-- ================= B3 ABOUT / MISSION BLOCK: WHO WE ARE ================= -->
-<section class="about">
+<section class="about" style="--about-h:560px">
   <div class="about-grid">
     <div class="about-img">
       <img class="img-aboutWho" alt="Gila River Police Department officers">
@@ -52,15 +52,7 @@
       <div class="rule"></div>
       <h2>Who <em>We Are</em></h2>
       <p>We are a team of over 186 sworn officers and 71 civilian professionals committed to excellence in policing. From the Chief of Police down, we emphasize professionalism, accountability, and responsiveness to the community’s needs. We take great care in selecting personnel who embody our department’s core values and are dedicated to serving with integrity and respect.</p>
-      <div class="mission">
-        <p class="eyebrow">Our Mission</p>
-        <blockquote>“It is the Mission of the Gila River Police Department to protect the life, property and sovereignty of all members of the Community by responding to calls for service with Integrity, proactively looking to prevent crime and to improve the quality of life of those we serve.”</blockquote>
-      </div>
-      <div class="mini-stats two">
-        <div><b>186</b><span>Sworn Officers</span></div>
-        <div><b>71</b><span>Civilian Professionals</span></div>
-      </div>
-      <a href="../about/mission/" class="text-link">Our Mission, Vision &amp; Core Values <span class="arr">→</span></a>
+      <a href="../about/mission/" class="btn" style="align-self:flex-start;margin-top:12px">Our Mission, Vision &amp; Core Values <span class="arr">→</span></a>
     </div>
   </div>
 </section>
@@ -87,8 +79,8 @@
   </div>
 </section>
 
-<!-- ================= C1 ICON GRID: SPECIALIZED TEAMS & SERVICES ================= -->
-<section class="ks-icons slate">
+<!-- ================= C3 IMAGE CARDS: SPECIALIZED TEAMS ================= -->
+<section class="ks-cards slate">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Specialized Teams &amp; Services</p>
@@ -96,15 +88,57 @@
       <div class="rule"></div>
       <p>GRPD's work goes beyond traditional patrol. Our specialized teams and personnel support investigations, emergency response, school safety, traffic enforcement, communications, and other needs across the Community.</p>
     </div>
-    <div class="ben-grid">
-      <a class="ben" href="../services/k9-unit/"><div class="ico">🐕</div><h3>K-9</h3><p>Specialized canine support for department operations.</p><p style="padding-top:12px;color:var(--gold);font-weight:700;font-size:10px;letter-spacing:.25em;text-transform:uppercase">Learn More →</p></a>
-      <a class="ben" href="../services/rangers/"><div class="ico">🏜️</div><h3>Rangers</h3><p>Patrol and protection of the Community's open lands, natural and cultural resources, and remote areas.</p><p style="padding-top:12px;color:var(--gold);font-weight:700;font-size:10px;letter-spacing:.25em;text-transform:uppercase">Learn More →</p></a>
-      <div class="ben"><div class="ico">🔍</div><h3>Special Investigations</h3><p>Focused investigative work.</p></div>
-      <div class="ben"><div class="ico">🛡️</div><h3>SWAT Team</h3><p>Specialized response to high-risk incidents.</p></div>
-      <a class="ben" href="../services/school-resource-officers/"><div class="ico">🏫</div><h3>School Resource Officers</h3><p>Supporting safety and relationships in Community schools.</p><p style="padding-top:12px;color:var(--gold);font-weight:700;font-size:10px;letter-spacing:.25em;text-transform:uppercase">Learn More →</p></a>
-      <a class="ben" href="../services/traffic/"><div class="ico">🏍️</div><h3>Motor Unit</h3><p>Traffic safety and enforcement.</p><p style="padding-top:12px;color:var(--gold);font-weight:700;font-size:10px;letter-spacing:.25em;text-transform:uppercase">Learn More →</p></a>
-      <div class="ben"><div class="ico">📡</div><h3>Dispatchers</h3><p>Coordinating calls for service and emergency response.</p></div>
-      <div class="ben"><div class="ico">🎨</div><h3>Graffiti Abatement</h3><p>Supporting efforts to address graffiti across the Community.</p></div>
+    <div class="pos-grid four">
+      <article class="pos">
+        <div class="pos-top"><img class="img-i20" alt=""><h3>K-9 Unit</h3></div>
+        <div class="pos-body">
+          <p>Specialized canine support for department operations.</p>
+          <a href="../services/k9-unit/" class="btn">Learn More <span class="arr">→</span></a>
+        </div>
+      </article>
+      <article class="pos">
+        <div class="pos-top"><img class="img-i49" alt=""><h3>Rangers</h3></div>
+        <div class="pos-body">
+          <p>Patrol and protection of the Community's open lands, natural and cultural resources, and remote areas.</p>
+          <a href="../services/rangers/" class="btn">Learn More <span class="arr">→</span></a>
+        </div>
+      </article>
+      <article class="pos">
+        <div class="pos-top"><img class="img-i45" alt=""><h3>School Resource Officers</h3></div>
+        <div class="pos-body">
+          <p>Supporting safety and relationships in Community schools.</p>
+          <a href="../services/school-resource-officers/" class="btn">Learn More <span class="arr">→</span></a>
+        </div>
+      </article>
+      <article class="pos">
+        <div class="pos-top"><img class="img-i39" alt=""><h3>Motor Unit</h3></div>
+        <div class="pos-body">
+          <p>Traffic safety and enforcement.</p>
+          <a href="../services/traffic/" class="btn">Learn More <span class="arr">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= B4 PARAGRAPH + LIST RIGHT: ADDITIONAL TEAMS ================= -->
+<section class="ks-plist">
+  <div class="wrap grid">
+    <div class="text">
+      <div class="ks-head">
+        <h2>Additional <em>Specialized Teams</em></h2>
+        <div class="rule"></div>
+      </div>
+      <p>Our specialized teams and personnel also support investigations, emergency response, communications, and other needs across the Community.</p>
+    </div>
+    <div class="card">
+      <h3>Also Serving the Community</h3>
+      <ul>
+        <li><span><b>Special Investigations:</b> Focused investigative work.</span></li>
+        <li><span><b>SWAT Team:</b> Specialized response to high-risk incidents.</span></li>
+        <li><span><b>Dispatchers:</b> Coordinating calls for service and emergency response.</span></li>
+        <li><span><b>Graffiti Abatement:</b> Supporting efforts to address graffiti across the Community.</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -119,7 +153,7 @@
       <p>Competitive salary, comprehensive benefits, and the privilege of protecting the Gila River Indian Community. Sworn officers, civilian staff, and volunteers welcome.</p>
     </div>
     <div class="btns">
-      <a href="../join-the-team/#roles" class="btn">Apply Now</a>
+      <a href="https://selfservice.gric.nsn.us/ess/employmentopportunities/default.aspx" class="btn" target="_blank" rel="noopener">Apply Now</a>
       <a href="../join-the-team/" class="btn btn-ghost">Learn More</a>
     </div>
   </div>

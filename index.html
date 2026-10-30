@@ -273,6 +273,9 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
   *,*::before,*::after{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
 }
+/* polish round */
+.news-more{display:flex;justify-content:center;padding-top:40px}
+@media (max-width:900px){ .vid-toggle{bottom:auto;top:116px;right:16px} }
 </style>
 </head>
 <body data-section="" data-root="">
@@ -294,7 +297,6 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
     <div class="tagline"><i></i><p>Stand Strong. Serve Proud.</p><i></i></div>
     <div class="hero-btns">
       <a href="join-the-team/" class="btn-lg red">Join Our Team <span class="arr">→</span></a>
-      <button class="btn-lg ghost" data-open-video><span class="play">▶</span>Watch Our Story</button>
     </div>
   </div>
   <div class="stats">
@@ -388,7 +390,6 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
   <div class="wrap">
     <div class="news-head">
       <div><p class="eyebrow">Stay Informed</p><h2>Latest News</h2><div class="rule"></div></div>
-      <a href="news/" class="btn btn-ghost">View All News <span class="arr">→</span></a>
     </div>
     <div class="news-grid">
       <a class="post" href="news/grpd-is-hiring/"><div class="post-img"><img class="img-i24" alt="GRPD officers in formation"></div>
@@ -398,6 +399,7 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
       <a class="post" href="news/grpd-is-hiring/"><div class="post-img"><img class="img-news3" alt=""></div>
         <div class="post-body"><time class="ph">[Date]</time><h3 class="ph">[News Headline]</h3><span class="go">Read More →</span></div></a>
     </div>
+    <div class="news-more"><a href="news/" class="btn">View All News <span class="arr">→</span></a></div>
   </div>
 </section>
 
@@ -411,7 +413,7 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
       <p>Competitive salary, comprehensive benefits, and the privilege of protecting the Gila River Indian Community. Sworn officers, civilian staff, and volunteers welcome.</p>
     </div>
     <div class="btns">
-      <a href="join-the-team/#roles" class="btn">Apply Now</a>
+      <a href="https://selfservice.gric.nsn.us/ess/employmentopportunities/default.aspx" class="btn" target="_blank" rel="noopener">Apply Now</a>
       <a href="join-the-team/" class="btn btn-ghost">Learn More</a>
     </div>
   </div>
@@ -434,16 +436,6 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
 
 <div id="site-footer"></div>
 
-<!-- Video modal -->
-<div class="modal" id="video" role="dialog" aria-modal="true" aria-label="Our story video">
-  <div class="modal-box">
-    <button class="modal-close" aria-label="Close video" data-close-video>×</button>
-    <span class="play" style="width:56px;height:56px;font-size:18px">▶</span>
-    <p class="eyebrow">Video placeholder</p>
-    <p>Department story video embeds here (YouTube/Vimeo or self-hosted MP4).</p>
-  </div>
-</div>
-
 <script src="assets/site.js"></script>
 <script>
 /* Images, nav, mobile menu and footer come from assets/site.js */
@@ -453,17 +445,8 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
    1st choice: a web-compressed copy at videos/grpd-hero.mp4 (fast; use this for launch).
    Fallback: streams grpd-hero.mp4 from the shared Drive folder. */
 GRIC_heroVideo('heroBg', [
-  'videos/grpd-hero.mp4',
-  'https://drive.usercontent.google.com/download?id=1v_PBfLc8osZY_NoQwLYu5QES8cGEmDPa&export=download&confirm=t'
+  'videos/grpd-hero.mp4'
 ], 'hero', { fallback: true });
-
-/* ---- Video modal ---- */
-const modal = document.getElementById('video');
-document.querySelector('[data-open-video]').onclick = () => modal.classList.add('open');
-document.querySelector('[data-close-video]').onclick = () => modal.classList.remove('open');
-modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
-
-document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.remove('open'); });
 
 /* ---- Hero stat count-up (single page-load moment) ---- */
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {

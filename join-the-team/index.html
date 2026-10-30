@@ -523,7 +523,7 @@ textarea{height:126px;resize:vertical}
     </div>
     <div class="process-cta">
       <p>Applications accepted continuously at <a href="https://www.gilariver.org/index.php/opportunities/jobs" target="_blank" rel="noopener"><b>www.gilariver.org</b></a></p>
-      <a href="#" class="btn">Start Your Application <span class="arr">→</span></a>
+      <a href="https://www.gilariver.org/index.php/opportunities/jobs" class="btn" target="_blank" rel="noopener">Start Your Application <span class="arr">→</span></a>
     </div>
   </div>
 </section>
@@ -628,7 +628,10 @@ textarea{height:126px;resize:vertical}
       <h2><span>Serve with Purpose.</span><span>Join GRPD Today.</span></h2>
       <p>Competitive salary, comprehensive benefits, and the privilege of protecting the Gila River Indian Community. Sworn officers, civilian staff, and volunteers welcome.</p>
     </div>
-    <a href="#roles" class="btn">Apply Now</a>
+    <div class="btns">
+      <a href="https://selfservice.gric.nsn.us/ess/employmentopportunities/default.aspx" class="btn" target="_blank" rel="noopener">Apply Now</a>
+      <a href="#roles" class="btn btn-ghost">Learn More</a>
+    </div>
   </div>
 </section>
 
@@ -640,8 +643,7 @@ textarea{height:126px;resize:vertical}
 /* Header video: "Join the Gila River Police General_16x9_4K.mp4" — autoplays muted and loops.
    1st choice: web-compressed copy at videos/grpd-recruiting.mp4. Fallback: grpd-recruiting.mp4 from the shared Drive folder. */
 GRIC_heroVideo('joinHeroBg', [
-  '../videos/grpd-recruiting.mp4',
-  'https://drive.usercontent.google.com/download?id=1myqqcJTygLndSDMxnYvxy4IUvSXDgEJ3&export=download&confirm=t'
+  '../videos/grpd-recruiting.mp4'
 ], 'joinHero', { fallback: true });
 
 /* ---- "View Openings & Apply" -> GRIC Employee Self Service job listings.

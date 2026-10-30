@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../../assets/site.css">
-<!-- Page built from Kitchen Sink blocks: A3a, B2a, C4, G1 (styles in ../../../assets/site.css) -->
+<!-- Page built from Kitchen Sink blocks: A3a, B2a, C4 (styles in ../../../assets/site.css) -->
 </head>
 <body data-section="about" data-root="../../../">
 
@@ -35,33 +35,41 @@
   </div>
 </section>
 
-<!-- C4 NEWS / EVENT CARDS -->
-<!-- When events are scheduled, replace the .empty-card with .post event cards (date, location, details). -->
-<section class="news">
+<!-- C4 EVENT LIST: COFFEE WITH A COP -->
+<!-- CMS: each card is one "Event" entry with fields Date, Start/End Time, District, Location Name, Address (Get Directions builds a Google Maps link from Address).
+     Past events drop off automatically; when no events are scheduled, show the empty message below instead. The three events here are layout examples. -->
+<section class="events">
   <div class="wrap">
-    <div class="news-head">
-      <div><p class="eyebrow">Upcoming Events</p><h2>Join Us for Coffee!</h2><div class="rule"></div></div>
+    <div class="sec-head">
+      <p class="eyebrow">Upcoming Events</p>
+      <h2>Join Us for Coffee!</h2>
+      <div class="rule"></div>
     </div>
-    <div class="news-grid">
-      <div class="empty-card">
-        <div class="cal" aria-hidden="true"><span>Soon</span><b>☕</b></div>
-        <div><h3>Check back for upcoming Coffee with a Cop events.</h3><p>Date, time, and location will be posted here as new events are announced.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- G1 CTA BANNER -->
-<section class="recruit">
-  <div class="recruit-bg"><img class="img-recruit" alt=""></div>
-  <div class="wrap">
-    <div>
-      <p class="eyebrow">Community Programs</p>
-      <h2><span>Building Stronger</span><span>Community Connections</span></h2>
-      <p>Stay connected with GRPD and learn about more opportunities to get involved in your Community.</p>
-    </div>
-    <div class="btns">
-      <a href="../../../about/community/" class="btn">Explore Community Programs</a>
+    <div class="event-list">
+      <article class="event">
+        <div class="ev-date"><span>Nov</span><b>14</b></div>
+        <div class="ev-body">
+          <h3>Coffee with a Cop: District 3</h3>
+          <ul class="ev-meta"><li><b>When</b> Saturday, Nov. 14 · 8:00 – 10:00 a.m.</li><li><b>Where</b> <span class="ph">Location Name, Street Address</span></li></ul>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Gila+River+Indian+Community+{dist.replace(' ','+')}" class="btn btn-ghost" target="_blank" rel="noopener">Get Directions <span class="arr">→</span></a>
+      </article>
+      <article class="event">
+        <div class="ev-date"><span>Dec</span><b>12</b></div>
+        <div class="ev-body">
+          <h3>Coffee with a Cop: District 5</h3>
+          <ul class="ev-meta"><li><b>When</b> Saturday, Dec. 12 · 8:00 – 10:00 a.m.</li><li><b>Where</b> <span class="ph">Location Name, Street Address</span></li></ul>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Gila+River+Indian+Community+{dist.replace(' ','+')}" class="btn btn-ghost" target="_blank" rel="noopener">Get Directions <span class="arr">→</span></a>
+      </article>
+      <article class="event">
+        <div class="ev-date"><span>Jan</span><b>9</b></div>
+        <div class="ev-body">
+          <h3>Coffee with a Cop: District 6</h3>
+          <ul class="ev-meta"><li><b>When</b> Saturday, Jan. 9 · 8:00 – 10:00 a.m.</li><li><b>Where</b> <span class="ph">Location Name, Street Address</span></li></ul>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Gila+River+Indian+Community+{dist.replace(' ','+')}" class="btn btn-ghost" target="_blank" rel="noopener">Get Directions <span class="arr">→</span></a>
+      </article>
     </div>
   </div>
 </section>
