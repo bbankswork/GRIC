@@ -162,7 +162,7 @@
       <div><small>Gila River Indian Community</small><strong>Police Department</strong></div>
     </a>
     <div class="nav-cta">
-      <a href="tel:5205624511" class="btn-sm btn-outline">Non-Emergency: 520-562-4511</a>
+      <a href="tel:5205624511" class="btn-sm btn-outline"><span class="lbl">Non-Emergency:</span> 520-562-4511</a>
       <a href="tel:911" class="btn-sm btn-red"><i class="pulse"></i>Emergency 911</a>
       <button class="burger" aria-label="Open menu" aria-controls="drawer" aria-expanded="false" data-open-drawer>☰</button>
     </div>
