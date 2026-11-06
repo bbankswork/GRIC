@@ -849,3 +849,6 @@ html{scroll-behavior:smooth}
 .ks-rich a.pe-top:hover{color:var(--gold)}
 .ks-form .form-note{font-size:12.5px;line-height:1.6;color:rgba(255,255,255,.55);padding:8px 0 16px}
 .ks-form .sec-head p a{text-decoration:underline}
+.ks-steps .steps.three{grid-template-columns:repeat(3,1fr)}
+.ks-steps .steps.three::before{left:16.66%;right:16.66%}
+@media (max-width:900px){ .ks-steps .steps.three{grid-template-columns:1fr} .ks-steps .steps.three::before{left:24px;right:auto;top:24px;bottom:24px;width:1px;height:auto} }
