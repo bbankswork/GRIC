@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>File a Complaint | Gila River Police Department</title>
-<meta name="description" content="File a complaint about a Gila River Police Department employee online or learn how to submit a complaint by phone, mail, or in person.">
+<title>Commendations &amp; Complaints | Gila River Police Department</title>
+<meta name="description" content="Commend a Gila River Police Department employee or file a complaint online, or learn how to submit a complaint by phone, mail, or in person.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/site.css?v=5903406d">
-<!-- Page built from Kitchen Sink blocks: A3a, B1, E1 (styles in ../../assets/site.css?v=5903406d) -->
+<link rel="stylesheet" href="../../assets/site.css?v=b55392db">
+<!-- Page built from Kitchen Sink blocks: A3a, B1, E1 (styles in ../../assets/site.css?v=b55392db) -->
 </head>
 <body data-section="forms" data-root="../../">
 
@@ -19,7 +19,7 @@
 <!-- A3a INTERIOR PAGE HERO -->
 <section class="page-hero">
   <div class="bg"><img class="img-i33" alt="GRPD officers with Community families"></div>
-  <div class="inner"><h1>File a Complaint</h1></div>
+  <div class="inner"><h1>Commendations &amp; Complaints</h1></div>
 </section>
 
 <!-- B1 RICH TEXT -->
@@ -27,6 +27,23 @@
   <div class="wrap">
     <div class="body">
       <div class="ks-head">
+        <h2>How Can <em>We Help?</em></h2>
+        <div class="rule"></div>
+      </div>
+      <div class="cols">
+        <div class="lcard"><h3>Commend an Officer</h3><p>Recognize a GRPD employee for excellent service.</p><a href="#commend" class="btn">Commend an Officer <span class="arr">→</span></a></div>
+        <div class="lcard"><h3>File a Complaint</h3><p>Let us know if a GRPD employee did not meet our standards of professionalism and respect.</p><a href="#complaint" class="btn">File a Complaint <span class="arr">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- B1 RICH TEXT -->
+<section class="ks-rich slate" id="complaint">
+  <div class="wrap">
+    <div class="body">
+      <div class="ks-head">
+        <p class="eyebrow">File a Complaint</p>
         <h2>Your Concerns <em>Matter</em></h2>
         <div class="rule"></div>
       </div>
@@ -39,7 +56,7 @@
 
 <!-- E1 FORM — CENTERED: COMPLAINT -->
 <!-- DEVELOPMENT: prototype form only — nothing is sent or stored. Live build keeps the existing GRPD form's required fields, validation and secure routing. -->
-<section class="ks-form" id="complaint">
+<section class="ks-form">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Online Form</p>
@@ -89,25 +106,6 @@
 </section>
 
 <!-- B1 RICH TEXT -->
-<section class="ks-rich slate" id="commend">
-  <div class="wrap">
-    <div class="body">
-      <div class="ks-head">
-        <p class="eyebrow">Commendations</p>
-        <h2>Commend <em>an Officer</em></h2>
-        <div class="rule"></div>
-      </div>
-      <p>Recognize a GRPD employee for excellent service. Download and complete the commendation form, then mail it or drop it off at GRPD Headquarters.</p>
-      <div class="btns"><a href="https://www.gricsafety.org/view/download.php/police-department/user_file_6" class="btn" target="_blank" rel="noopener">Download the Commendation Form (PDF) <span class="arr">→</span></a></div>
-      <div class="cols">
-        <div><h3>Mail To</h3><address class="addr">Gila River Police Department<br>P.O. Box 2186<br>Sacaton, AZ 85147</address></div>
-        <div><h3>Drop Off At</h3><address class="addr">Sacaton Headquarters<br>637 W. Gu’u Ki Street<br>Sacaton, AZ 85147</address></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- B1 RICH TEXT -->
 <section class="ks-rich ">
   <div class="wrap">
     <div class="body">
@@ -121,15 +119,52 @@
   </div>
 </section>
 
+<!-- E1 FORM — CENTERED: COMMEND AN OFFICER (fields match the current GRIC Safety form) -->
+<!-- DEVELOPMENT: prototype form only, nothing is sent. -->
+<section class="ks-form" id="commend" style="background:var(--slate)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Commendations</p>
+      <h2>Commend an Officer</h2>
+      <div class="rule"></div>
+      <p>Recognize a GRPD employee for excellent service. Complete the form below, or <a href="https://www.gricsafety.org/view/download.php/police-department/user_file_6" target="_blank" rel="noopener" style="color:var(--gold)">download the commendation form</a> and mail it to P.O. Box 2186, Sacaton, AZ 85147 or drop it off at GRPD Headquarters, 637 W. Gu’u Ki Street, Sacaton.</p>
+    </div>
+    <div class="form-card">
+      <form id="commendForm" novalidate>
+        <fieldset>
+          <legend>Your Interaction</legend>
+          <div class="row2"><div><label for="m-date">Date of Interaction *</label><input id="m-date" name="m-date" type="date" required></div><div><label for="m-loc">Location of Interaction *</label><input id="m-loc" name="m-loc" type="text" required></div></div>
+          <div class="field-full"><div><label for="m-officers">Name of Officer(s) *</label><input id="m-officers" name="m-officers" type="text" required></div></div>
+          <div class="field-full"><label for="m-desc">Please describe in detail your interaction with GRPD *</label><textarea id="m-desc" name="m-desc" required placeholder="Please include as much information as you can"></textarea></div>
+        </fieldset>
+        <fieldset>
+          <legend>Your Information</legend>
+          <div class="field-full"><div><label for="m-name">Your Name *</label><input id="m-name" name="m-name" type="text" required></div></div>
+          <div class="row2" style="margin-top:16px"><div><label for="m-email">Your Email *</label><input id="m-email" name="m-email" type="email" required></div><div><label for="m-phone">Your Phone Number</label><input id="m-phone" name="m-phone" type="tel"></div></div>
+          <div class="row2"><div><label for="m-addr1">Address 1</label><input id="m-addr1" name="m-addr1" type="text"></div><div><label for="m-addr2">Address 2</label><input id="m-addr2" name="m-addr2" type="text"></div></div>
+          <div class="row3"><div><label for="m-city">City</label><input id="m-city" name="m-city" type="text"></div><div><label for="m-state">State</label><select id="m-state" name="m-state"><option>Alabama</option><option>Alaska</option><option selected>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option></select></div><div><label for="m-zip">Zip Code</label><input id="m-zip" name="m-zip" type="text"></div></div>
+        </fieldset>
+        <button type="submit" class="btn submit">Submit</button>
+        <div class="form-msg" id="commendFormMsg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <div id="site-footer"></div>
 
-<script src="../../assets/site.js?v=5903406d"></script>
+<script src="../../assets/site.js?v=b55392db"></script>
 <script>
 /* ---- Prototype form: validates only, nothing is sent ---- */
 (() => { const f = document.getElementById('complaintForm'), m = document.getElementById('complaintFormMsg');
 f.addEventListener('submit', e => { e.preventDefault(); m.className = 'form-msg show';
   if (!f.checkValidity()) { m.classList.add('err'); m.textContent = 'Please complete all required fields.'; return; }
   m.textContent = 'Thank you. Your complaint has been submitted to the GRPD Professional Standards Unit.'; f.reset(); }); })();
+/* ---- Prototype form: validates only, nothing is sent ---- */
+(() => { const f = document.getElementById('commendForm'), m = document.getElementById('commendFormMsg');
+f.addEventListener('submit', e => { e.preventDefault(); m.className = 'form-msg show';
+  if (!f.checkValidity()) { m.classList.add('err'); m.textContent = 'Please complete all required fields.'; return; }
+  m.textContent = 'Thank you for recognizing a GRPD employee. Your commendation has been submitted.'; f.reset(); }); })();
 </script>
 </body>
 </html>

@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/site.css?v=5903406d">
-<!-- Page built from Kitchen Sink blocks: A3a, B1, E3, B2a (styles in ../../assets/site.css?v=5903406d) -->
+<link rel="stylesheet" href="../../assets/site.css?v=b55392db">
+<!-- Page built from Kitchen Sink blocks: A3a, B1, E1, E3, B2a (styles in ../../assets/site.css?v=b55392db) -->
 </head>
 <body data-section="forms" data-root="../../">
 
@@ -52,19 +52,42 @@
   </div>
 </section>
 
-<!-- B1 RICH TEXT -->
-<section class="ks-rich ">
+<!-- E1 FORM — CENTERED: REQUEST FOR OFFICIAL POLICE INFORMATION (fields match the Jan 2025 PDF) -->
+<!-- DEVELOPMENT: prototype form only, nothing is sent. Live build routes submissions to the Records Division. -->
+<section class="ks-form" id="request">
   <div class="wrap">
-    <div class="body">
-      <div class="ks-head">
-        <p class="eyebrow">Request Form</p>
-        <h2>Download the <em>Police Records Request Form</em></h2>
-        <div class="rule"></div>
-      </div>
-      <p>Complete the official Request for Official Police Information form with as much detail as possible.</p>
-      <div class="btns"><a href="https://www.gricsafety.org/view/download.php/police-department/records-request-form-26" class="btn" target="_blank" rel="noopener">Download the Records Request Form (PDF) <span class="arr">→</span></a></div>
-      <h3>Information to Have Ready</h3>
-      <ul><li>Report or OCA number, if available</li><li>Type of report, including traffic accident when applicable</li><li>Date and time of the incident</li><li>Location of the incident</li><li>Names of people involved</li><li>Your contact and mailing information</li><li>Preferred delivery method: pickup, mail, or email</li></ul>
+    <div class="sec-head">
+      <p class="eyebrow">Request Form</p>
+      <h2>Request for Official Police Information</h2>
+      <div class="rule"></div>
+      <p>Submit your request online, or <a href="https://www.gricsafety.org/view/download.php/police-department/records-request-form-26" target="_blank" rel="noopener" style="color:var(--gold)">download the PDF form</a>. Please provide as much information as possible so that we can better serve you.</p>
+    </div>
+    <div class="form-card">
+      <form id="recordsForm" novalidate>
+        <fieldset>
+          <legend>Requestor Information</legend>
+          <div class="row3"><div><label for="r-last">Last Name *</label><input id="r-last" name="r-last" type="text" required></div><div><label for="r-first">First Name *</label><input id="r-first" name="r-first" type="text" required></div><div><label for="r-mi">Middle Initial</label><input id="r-mi" name="r-mi" type="text"></div></div>
+          <div class="field-full"><div><label for="r-addr">Mailing Address *</label><input id="r-addr" name="r-addr" type="text" required></div></div>
+          <div class="field-full"><div><label for="r-phone">Contact / Phone Number(s) *</label><input id="r-phone" name="r-phone" type="tel" required></div></div>
+        </fieldset>
+        <fieldset>
+          <legend>Incident Information</legend>
+          <div class="row2"><div><label for="r-oca">Report / OCA Number</label><input id="r-oca" name="r-oca" type="text"></div><div><label for="r-type">Report Type</label><select id="r-type" name="r-type"><option>Traffic Accident</option><option>Other</option></select></div></div>
+          <div class="field-full"><div><label for="r-other">If Other, Describe the Report</label><input id="r-other" name="r-other" type="text"></div></div>
+          <div class="row2" style="margin-top:16px"><div><label for="r-date">Date of Incident *</label><input id="r-date" name="r-date" type="date" required></div><div><label for="r-time">Time of Incident</label><input id="r-time" name="r-time" type="time"></div></div>
+          <div class="field-full"><div><label for="r-loc">Location of Incident *</label><input id="r-loc" name="r-loc" type="text" required></div></div>
+          <div class="field-full"><label for="r-names">Name(s) of Individual(s) Involved</label><textarea id="r-names" name="r-names" placeholder="List everyone involved, if known"></textarea></div>
+        </fieldset>
+        <fieldset>
+          <legend>Delivery Method</legend>
+          <div class="yn"><p>How would you like to receive your report? Select all that apply.</p><span><label><input type="checkbox" name="r-del" value="pickup"> Picked Up*</label><label><input type="checkbox" name="r-del" value="mail"> Mailed</label><label><input type="checkbox" name="r-del" value="email"> Emailed</label></span></div>
+          <div class="field-full"><div><label for="r-email">Email Address (for emailed reports)</label><input id="r-email" name="r-email" type="email"></div></div>
+          <p class="form-note">*We will hold your report no more than 30 days after we contact you for pick up.</p>
+        </fieldset>
+        <p class="form-note">There is a $5.00 fee per report copy, payable to Gila River Police Department – Records by money order, cashier's check, or business check. Please allow 7–10 days to finalize your request; we will contact you if we encounter delays. GRPD may restrict certain information, and some reports cannot be released without a court order.</p>
+        <button type="submit" class="btn submit">Submit Request</button>
+        <div class="form-msg" id="recordsFormMsg" role="status" aria-live="polite"></div>
+      </form>
     </div>
   </div>
 </section>
@@ -113,6 +136,13 @@
 
 <div id="site-footer"></div>
 
-<script src="../../assets/site.js?v=5903406d"></script>
+<script src="../../assets/site.js?v=b55392db"></script>
+<script>
+/* ---- Prototype form: validates only, nothing is sent ---- */
+(() => { const f = document.getElementById('recordsForm'), m = document.getElementById('recordsFormMsg');
+f.addEventListener('submit', e => { e.preventDefault(); m.className = 'form-msg show';
+  if (!f.checkValidity()) { m.classList.add('err'); m.textContent = 'Please complete all required fields.'; return; }
+  m.textContent = 'Thank you. Your request has been sent to the GRPD Records Division. We will contact you when it is ready or if there are delays.'; f.reset(); }); })();
+</script>
 </body>
 </html>
